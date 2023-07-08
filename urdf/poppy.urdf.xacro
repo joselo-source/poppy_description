@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot name="poppy" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find poppy_description)/urdf/poppy.xacro" />
+  <xacro:include filename="$(find poppy_description)/urdf/poppy.ros2_control.xacro" />
+
+  <link name="world"/>
+
+  <xacro:poppy parent="world">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:poppy>
+
+  <xacro:poppy_ros2_control name="poppy_ros2_control" />
+</robot>
