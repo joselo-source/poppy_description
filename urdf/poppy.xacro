@@ -33,7 +33,7 @@
     <parent link="base_link" />
     <child link="link1" />
     <axis xyz="0 0 1" />
-    <limit velocity="0.5" effort="0.3" lower="${-90*(pi/180)}" upper="${90*(pi/180)}" />
+    <limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
 <!-- Link 1 -->
   <link name="link1">
@@ -61,7 +61,7 @@
     <parent link="link1" />
     <child link="link2" />
     <axis xyz="0 0 -1" />
-    <limit velocity="0.5" effort="0.3" lower="${-90*(pi/180)}" upper="${90*(pi/180)}" />
+    <limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
 <!-- link2 -->
   <link name="link2">
@@ -89,7 +89,7 @@
     <parent link="link2" />
     <child link="link3" />
     <axis xyz="0 0 -1" />
-    <limit velocity="0.5" effort="0.3" lower="${-90*(pi/180)}" upper="${90*(pi/180)}" />
+<limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
 <!-- link3 -->
   <link name="link3">
@@ -117,7 +117,7 @@
     <parent link="link3" />
     <child link="link4" />
     <axis xyz="0 0 -1" />
-    <limit velocity="0.5" effort="0.3" lower="${-90*(pi/180)}" upper="${90*(pi/180)}" />
+<limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
 <!-- link4 -->
   <link name="link4">
@@ -145,7 +145,7 @@
     <parent link="link4" />
     <child link="link5" />
     <axis xyz="0 0 1" />
-    <limit velocity="0.5" effort="0.3" lower="${-90*(pi/180)}" upper="${90*(pi/180)}" />
+<limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
 <!-- link5 -->
   <link name="link5">
@@ -194,7 +194,7 @@
     <axis xyz="0 0 -1" />
     <parent link="link5" />
     <child link="gripper" />
-    <limit velocity="0.5" effort="0.3" lower="${-20*(pi/180)}" upper="${60*(pi/180)}" />
+    <limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
 <!-- Moving tip of gripper -->
   <link name="moving_tip" />

@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 100  # Hz
+    update_rate: 1  # Hz
 
     velocity_controller:
       type: velocity_controllers/JointGroupVelocityController
@@ -34,5 +34,13 @@ joint_trajectory_controller:
     command_interfaces:
       - position
 
+
     state_interfaces:
       - position
+    
+    state_publish_rate: 1.0 # Override default
+    action_monitor_rate: 1.0 # Override default
+
+    constraints:
+      - stopped_velocity_tolerance: 0.02
+      - goal_time: 0.0
