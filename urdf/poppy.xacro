@@ -33,7 +33,7 @@
     <parent link="base_link" />
     <child link="link1" />
     <axis xyz="0 0 1" />
-    <limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
+    <limit velocity="10" effort="0.4" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
 <!-- Link 1 -->
   <link name="link1">
@@ -60,8 +60,8 @@
     <origin xyz="0 0 0.0240006783879033" rpy="0 -1.5707963267949 0" />
     <parent link="link1" />
     <child link="link2" />
-    <axis xyz="0 0 -1" />
-    <limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
+    <axis xyz="0 0 1" />
+    <limit velocity="10" effort="0.4" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
 <!-- link2 -->
   <link name="link2">
@@ -88,8 +88,8 @@
     <origin xyz="0.054 0 0" rpy="0 0 0" />
     <parent link="link2" />
     <child link="link3" />
-    <axis xyz="0 0 -1" />
-<limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
+    <axis xyz="0 0 1" />
+<limit velocity="10" effort="0.4" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
 <!-- link3 -->
   <link name="link3">
@@ -117,7 +117,7 @@
     <parent link="link3" />
     <child link="link4" />
     <axis xyz="0 0 -1" />
-<limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
+<limit velocity="10" effort="0.4" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
 <!-- link4 -->
   <link name="link4">
@@ -144,8 +144,8 @@
     <origin xyz="0 -0.048 0" rpy="0 -1.5707963267949 0" />
     <parent link="link4" />
     <child link="link5" />
-    <axis xyz="0 0 1" />
-<limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
+    <axis xyz="0 0 -1" />
+<limit velocity="10" effort="0.4" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
 <!-- link5 -->
   <link name="link5">
@@ -191,10 +191,10 @@
 <!-- Motor 6 -->
   <joint name="m6" type="revolute">
     <origin xyz="0 -0.058 0" rpy="0 -1.5707963267949 0" />
-    <axis xyz="0 0 -1" />
+    <axis xyz="0 0 1" />
     <parent link="link5" />
     <child link="gripper" />
-    <limit velocity="1" effort="0.3" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
+    <limit velocity="10" effort="0.4" lower="${-90*(pi/180)}" upper="${30*(pi/180)}" />
   </joint>
 <!-- Moving tip of gripper -->
   <link name="moving_tip" />

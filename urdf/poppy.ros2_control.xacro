@@ -6,62 +6,62 @@
     <ros2_control name="${name}" type="system">
       <hardware>
         <plugin>dynamixel_hardware/DynamixelHardware</plugin>
-        <param name="usb_port">/dev/ttyACM0</param>
+        <param name="usb_port">/dev/ttyUSB0</param>
         <param name="baud_rate">115200</param>
         <!--<param name="use_dummy">true</param>--> 
       </hardware>
       <joint name="m1">
         <param name="id">1</param>
-        <command_interface name="position" initial_value="512" />
-        <!--command_interface name="velocity" initial_value="0.05" /-->
+        <command_interface name="position" initial_value="0.0" />
+        <!--command_interface name="velocity"/-->
         <state_interface name="position"/>
-        <!--state_interface name="velocity"/-->
-        <!-- state_interface name="effort"/-->
+        <state_interface name="velocity"/>
+        <!--state_interface name="effort"/-->
       </joint>
 	  
       <joint name="m2">
         <param name="id">2</param>
-        <command_interface name="position" />
-        <!--command_interface name="velocity" initial_value="0.05" /-->
+        <command_interface name="position" initial_value="0.0" />
+        <!--command_interface name="velocity"/-->
         <state_interface name="position"/>
-        <!--state_interface name="velocity"/-->
-        <!-- state_interface name="effort"/-->
+        <state_interface name="velocity"/>
+        <!--state_interface name="effort"/-->
       </joint>
 	  
       <joint name="m3">
         <param name="id">3</param>
-        <command_interface name="position" />
-        <!--command_interface name="velocity" initial_value="0.05" /-->
+        <command_interface name="position" initial_value="0.0" />
+        <!--command_interface name="velocity"/-->
         <state_interface name="position"/>
-        <!--state_interface name="velocity"/-->
-        <!-- state_interface name="effort"/-->
+        <state_interface name="velocity"/>
+        <!--state_interface name="effort"/-->
       </joint>
 	  
       <joint name="m4">
         <param name="id">4</param>
-        <command_interface name="position" />
-        <!--command_interface name="velocity" initial_value="0.05" /-->
+        <command_interface name="position" initial_value="0.0" />
+        <!--command_interface name="velocity"/-->
         <state_interface name="position"/>
-        <!--state_interface name="velocity"/-->
-        <!-- state_interface name="effort"/-->
+        <state_interface name="velocity"/>
+        <!--state_interface name="effort"/-->
       </joint>
 	  
       <joint name="m5">
         <param name="id">5</param>
-        <command_interface name="position" />
-        <!--command_interface name="velocity" initial_value="0.05" /-->
+        <command_interface name="position" initial_value="0.0" />
+        <!--command_interface name="velocity"/-->
         <state_interface name="position"/>
-        <!--state_interface name="velocity"/-->
-        <!-- state_interface name="effort"/-->
+        <state_interface name="velocity"/>
+        <!--state_interface name="effort"/-->
       </joint>
 	  
-	  <joint name="m6">
+      <joint name="m6">
         <param name="id">6</param>
-        <command_interface name="position" />
-        <!--command_interface name="velocity" initial_value="0.05" /-->
+        <command_interface name="position" initial_value="0.0" />
+        <!--command_interface name="velocity"/-->
         <state_interface name="position"/>
-        <!--state_interface name="velocity"/-->
-        <!-- state_interface name="effort"/-->
+        <state_interface name="velocity"/>
+        <!--state_interface name="effort"/-->
       </joint>
     </ros2_control>
 

@@ -1,0 +1,28 @@
+ros2 control switch_controllers --activate joint_state_broadcaster --activate joint_trajectory_controller --deactivate velocity_controller
+
+ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory control_msgs/action/FollowJointTrajectory -f "{
+  trajectory: {
+    joint_names: [m1, m2, m3, m4, m5, m6],
+    points: [
+      { positions: [0, 0, 0, 0, 0, -1.5], time_from_start: { sec: 1 } },
+      { positions: [0, 0.7, -1.4, 0, 0.6, -1.5], time_from_start: { sec: 5 } },
+      { positions: [0.8, 0.7, -1.4, 0, 0.6, -1.5], time_from_start: { sec: 6 } },
+      { positions: [0.8, 0.25, -0.9, 0, 0.6, -1.5], time_from_start: { sec: 7 } },
+      { positions: [0.8, -1, 0.27, 0, 0.4, -1.5], time_from_start: { sec: 8 } },
+      { positions: [0.8, -1, 0.27, 0, 0.4, 0.1], time_from_start: { sec: 9 } },
+      { positions: [0, 0, 0, 0, 0, 0.1], time_from_start: { sec: 10 } },
+      { positions: [0, 0, 0, -1.57, 0, 0.1], time_from_start: { sec: 11 } },
+      { positions: [0, 0, 0, 1.57, 0, 0.1], time_from_start: { sec: 12 } },
+      { positions: [0, 0, 0, 0, 0, 0.1], time_from_start: { sec: 15 } },
+    ]
+  }
+}"
+
+ros2 action send_goal /joint_trajectory_controller/follow_joint_trajectory control_msgs/action/FollowJointTrajectory -f "{
+  trajectory: {
+    joint_names: [m1, m2, m3, m4, m5, m6],
+    points: [
+      { positions: [0, 0, 0, 0, 0, 0], time_from_start: { sec: 2 } }
+    ]
+  }
+}"
