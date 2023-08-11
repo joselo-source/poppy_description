@@ -3,14 +3,6 @@
 <!-- Import Rviz colors -->
 <xacro:include filename="$(find poppy_description)/urdf/poppy.material.xacro" />
 
-<xacro:macro name="poppy" params="parent *origin">
-  <joint name="origin_to_link1" type="fixed">
-    <xacro:insert_block name="origin" />
-    <parent link="${parent}" />
-    <child link="base_link" />
-    <axis xyz="0 0 1" />
-  </joint>
-
 <!-- Base link -->
   <link name="base_link">
     <visual>
@@ -27,14 +19,16 @@
       </geometry>
     </collision>
   </link>
+
 <!-- Motor 1 -->
   <joint name="m1" type="revolute">
     <origin xyz="0 0 0.0327993216120967" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="link1" />
     <axis xyz="0 0 1" />
-    <limit velocity="10" effort="1" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
+      <limit velocity="10.1" effort="1.0" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
+
 <!-- Link 1 -->
   <link name="link1">
     <visual>
@@ -55,14 +49,16 @@
       <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
     </inertial>
   </link>
+
 <!-- Motor 2 -->
   <joint name="m2" type="revolute">
     <origin xyz="0 0 0.0240006783879033" rpy="0 -1.5707963267949 0" />
     <parent link="link1" />
     <child link="link2" />
     <axis xyz="0 0 1" />
-    <limit velocity="10" effort="1" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
+      <limit velocity="10.1" effort="1.0" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
+
 <!-- link2 -->
   <link name="link2">
     <visual>
@@ -83,14 +79,16 @@
       <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
     </inertial>
   </link>
+
 <!-- Motor 3 -->
   <joint name="m3" type="revolute">
     <origin xyz="0.054 0 0" rpy="0 0 0" />
     <parent link="link2" />
     <child link="link3" />
     <axis xyz="0 0 1" />
-<limit velocity="10" effort="1" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
+      <limit velocity="10.1" effort="1.0" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
+
 <!-- link3 -->
   <link name="link3">
     <visual>
@@ -117,8 +115,9 @@
     <parent link="link3" />
     <child link="link4" />
     <axis xyz="0 0 -1" />
-<limit velocity="10" effort="1" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
+      <limit velocity="10.1" effort="1.0" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
+
 <!-- link4 -->
   <link name="link4">
     <visual>
@@ -139,14 +138,16 @@
       <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
     </inertial>
   </link>
+
 <!-- Motor 5 -->
   <joint name="m5" type="revolute">
     <origin xyz="0 -0.048 0" rpy="0 -1.5707963267949 0" />
     <parent link="link4" />
     <child link="link5" />
     <axis xyz="0 0 -1" />
-<limit velocity="10" effort="1" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
+  <limit velocity="10.1" effort="1.0" lower="${-150*(pi/180)}" upper="${150*(pi/180)}" />
   </joint>
+
 <!-- link5 -->
   <link name="link5">
     <visual>
@@ -168,6 +169,7 @@
       <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
     </inertial>
   </link>
+
 <!-- gripper -->
   <link name="gripper">
     <visual>
@@ -188,19 +190,20 @@
       <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
     </inertial>
   </link>
+
 <!-- Motor 6 -->
   <joint name="m6" type="revolute">
     <origin xyz="0 -0.058 0" rpy="0 -1.5707963267949 0" />
     <axis xyz="0 0 1" />
     <parent link="link5" />
     <child link="gripper" />
-    <limit velocity="10" effort="1" lower="${-90*(pi/180)}" upper="${30*(pi/180)}" />
+    <limit velocity="10.1" effort="1.0" lower="${-90*(pi/180)}" upper="${30*(pi/180)}" />
   </joint>
   
 <!--Fixed tip of gripper -->
   <link name="fixed_tip" />
   <joint name="tg" type="fixed">
-    <origin xyz="0 -0.052 0" rpy="-1.5707963267949 0 0" /> 
+    <origin xyz="0 -0.11 0" rpy="-1.5707963267949 0 0" /> 
     <parent link="link5" />
     <child link="fixed_tip" />
   </joint>
